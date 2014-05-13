@@ -1,0 +1,35 @@
+﻿@model AutofacExample.Web.Models.HomeViewModel
+
+<div class="jumbotron">
+    <h1>Autofac Example</h1>
+    <p class="lead">This site shows how Autofac can be integrated with Fluent NHibernate</p>
+    <p>
+        <a href="http://autofac.org/" class="btn btn-primary btn-large">Learn more about Autofac &raquo;</a>
+        <a href="http://nhforge.org/" class="btn btn-primary btn-large">Learn more about NHibernate &raquo;</a>
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Showing Data Loaded From a Database</h2>
+        <table class="col-md-12">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>RequestBody</th>
+                <th>Date Time Requested</th>
+            </tr>
+            @foreach (var contact in Model.Contacts)
+            {
+                <tr>
+                    <td>@contact.Id</td>
+                    <td>@contact.Name</td>
+                    <td>@contact.Email</td>
+                    <td>@contact.RequestBody</td>
+                    <td>@contact.DateTimeRequested.ToShortDateString()</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
