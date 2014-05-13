@@ -25,8 +25,6 @@ namespace AutofacExample.Web
 
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
-            /*builder.RegisterModule(new AutofacWebTypesModule());
-            builder.RegisterSource(new ViewRegistrationSource());*/
 
             var container = builder.Build();
 
